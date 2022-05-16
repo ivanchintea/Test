@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :profiles, only: [ :new, :create, :edit, :update ]
+  get 'profiles/:id', to: 'profiles#edit'
+  post 'scrape/', to: 'profiles#scrape'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
